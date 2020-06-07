@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "fuck triller jwt secret",
+    "mongoUri": "mongodb+srv://aren:pic0siqqbang@cluster0-vpuwp.mongodb.net/test?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000"
+}
