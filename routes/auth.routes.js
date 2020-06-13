@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 const config = require('config')
 const router = Router()
 const User = require('../models/User')
+const { v4 } = require('uuid');
 
 // /api/auth/register
 router.post(
@@ -15,7 +16,6 @@ router.post(
             .isLength({ min: 6 })
     ],
     async (req, res) => {
-        console.log(req.body)
         try {
             const errors = validationResult(req)
 
@@ -38,10 +38,12 @@ router.post(
             }
 
             const hashedPassword = await bcrypt.hash(password, 12)
+            const id = v4()
 
             const user = new User({
                 userName: '',
                 img: '',
+                userId: id,
                 email,
                 password: hashedPassword,
                 phoneNumber: '',
@@ -51,7 +53,8 @@ router.post(
                 firstName,
                 lastName,
                 dialogs: [],
-                friends: [],
+                followers: [],
+                following: []
             })
 
             user.save()
@@ -106,7 +109,7 @@ router.post(
             return res.status(200)
                 .json({
                     token,
-                    userId: user.id,
+                    userId: user.userId,
                     email,
                     message: 'Successful Login!'
                 })

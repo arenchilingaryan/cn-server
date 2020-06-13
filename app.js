@@ -9,6 +9,9 @@ app.use(cors())
 
 app.use(express.json({ extended: true }))
 
+var bodyParser = require('body-parser')
+app.use(bodyParser.json({limit: '50mb'}))
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/profile', require('./routes/profile.routes'))

@@ -4,6 +4,7 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema({
     userName: {type: String, required: false},
+    userId: {type: String, required: true},
     img: {type: String, required: false},
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
@@ -18,8 +19,11 @@ const schema = new Schema({
             id : {type: String}
         }
     ],
-    friends: [
+    followers: [
         { with: {type: String} }
+    ],
+    following: [
+        {with: {type: String}}
     ]
 })
 
