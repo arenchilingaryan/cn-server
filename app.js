@@ -13,8 +13,11 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.json({limit: '50mb'}))
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
+
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/profile', require('./routes/profile.routes'))
+app.use('/api/users', require('./routes/users.route'))
+app.use('/api/useraction', require('./routes/useraction.router'))
 
 
 const PORT = config.get('port') || 5000

@@ -20,10 +20,10 @@ const schema = new Schema({
         }
     ],
     followers: [
-        { with: {type: String} }
+        { img: {type: String}, nickName: {type: String}, id: {type: String} }
     ],
     following: [
-        {with: {type: String}}
+        { img: {type: String}, nickName: {type: String}, id: {type: String} }
     ]
 })
 
