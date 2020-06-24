@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const config = require('config')
 const router = Router()
 const User = require('../models/User')
-const { v4 } = require('uuid');
+const { v4 } = require('uuid')
 
 // /api/auth/register
 router.post(

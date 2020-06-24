@@ -15,9 +15,7 @@ const schema = new Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
     dialogs: [
-        {
-            id : {type: String}
-        }
+        { id: {type: String}, with: {type: String} }
     ],
     followers: [
         { img: {type: String}, nickName: {type: String}, id: {type: String} }
