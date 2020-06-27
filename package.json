@@ -4,10 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "predeploy": "npm run build",
+    "deploy": "run gh-pages -d build"
   },
   "author": "Aren Chilingaryan <reactDOM.render@yandex.ru>",
   "license": "ISC",
+  "homepage": "https://arenchilingaryan.github.io/cn-server",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
