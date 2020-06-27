@@ -26,7 +26,7 @@ app.use('/api/dialogs', require('./routes/dialogs.routes'))
 
 
 
-const PORT = config.get('port') || 5000
+const PORT = process.env.PORT || 5000
 const io = socket(app.listen(PORT, () => console.log(`Server has been started on port ${PORT}...`)))
 
 async function start() {
